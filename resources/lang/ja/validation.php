@@ -150,6 +150,8 @@ return [
         'main_category_name' => 'メインカテゴリー名',
         'main_category_id' => 'メインカテゴリー',
         'sub_category_name' => 'サブカテゴリー名',
+        'post_title' => 'タイトル',
+        'post_body' => '投稿内容',
     ],
 
 ];

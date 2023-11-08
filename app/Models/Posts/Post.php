@@ -23,11 +23,11 @@ class Post extends Model
         return $this->hasMany('App\Models\Posts\PostComment');
     }
 
-    // posts(1)-likes(多)
-    public function likes()
-    {
-        return $this->hasMany('App\Models\Posts\Like');
-    }
+    // // posts(1)-likes(多)
+    // public function likes()
+    // {
+    //     return $this->hasMany('App\Models\Posts\Like');
+    // }
 
     public function subCategories(){
         // リレーションの定義
