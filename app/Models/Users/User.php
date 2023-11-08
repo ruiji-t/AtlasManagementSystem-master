@@ -66,10 +66,10 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Models\Calendars\ReserveSettings', 'reserve_setting_users', 'user_id', 'reserve_setting_id')->withPivot('id');
     }
 
-    // // usersテーブル-subjectsテーブル（多対多）のリレーション
-    // public function subjects(){
-    //     return $this->belongsToMany('App\Models\Users\Subjects','subject_users','user_id','subject_id')-> withTimestamps();// リレーションの定義
-    // }
+    //
+    public function subjects(){
+        return $this->belongsToMany('App\Models\Users\Subjects', 'subject_users', 'user_id', 'subject_id');// リレーションの定義
+    }
 
     // いいねしているかどうか
     public function is_Like($post_id){
