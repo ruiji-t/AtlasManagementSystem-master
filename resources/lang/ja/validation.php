@@ -96,7 +96,7 @@ return [
     'password' => 'The password is incorrect.',
     'present' => 'The :attribute field must be present.',
     'regex' => 'The :attribute format is invalid.',
-    'required' => ':attribute を入力してください。',
+    'required' => ':attribute は必ず入力してください。',
     'required_if' => 'The :attribute field is required when :other is :value.',
     'required_unless' => 'The :attribute field is required unless :other is in :values.',
     'required_with' => 'The :attribute field is required when :values is present.',
@@ -152,6 +152,7 @@ return [
         'sub_category_name' => 'サブカテゴリー名',
         'post_title' => 'タイトル',
         'post_body' => '投稿内容',
+        'comment' => 'コメント',
     ],
 
 ];
