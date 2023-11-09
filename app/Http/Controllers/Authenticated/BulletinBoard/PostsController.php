@@ -14,6 +14,7 @@ use App\Http\Requests\BulletinBoard\PostFormRequest;
 use App\Http\Requests\CategoryFormRequest;
 
 use Auth;
+use DB;
 
 class PostsController extends Controller
 {
@@ -52,15 +53,28 @@ class PostsController extends Controller
         return view('authenticated.bulletinboard.post_create', compact('main_categories','sub_categories'));
     }
 
-    // 投稿登録
+    // 新規投稿
     public function postCreate(PostFormRequest $request){
-        $post = Post::create([
-            'user_id' => Auth::id(),
-            'post_title' => $request->post_title,
-            'post' => $request->post_body
-        ]);
 
-        return redirect()->route('post.show');
+        DB::beginTransaction();
+        try{
+            $post_category_id = $request->post_category_id;
+
+            $post_get = Post::create([
+                'user_id' => Auth::id(),
+                'post_title' => $request->post_title,
+                'post' => $request->post_body
+            ]);
+
+            // サブカテゴリーの登録
+            $post = Post::findOrFail($post_get->id);
+            $post->subCategories()->attach($post_category_id);
+            DB::commit();
+            return redirect()->route('post.show');
+        }catch(\Exception $e){
+            DB::rollback();
+            return redirect()->route('post.input');
+        }
     }
 
     // 投稿編集
