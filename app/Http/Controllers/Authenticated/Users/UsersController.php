@@ -11,6 +11,8 @@ use App\Models\Users\Subjects;
 use App\Searchs\DisplayUsers;
 use App\Searchs\SearchResultFactories;
 
+use DB;
+
 class UsersController extends Controller
 {
 
@@ -20,7 +22,9 @@ class UsersController extends Controller
         $updown = $request->updown;
         $gender = $request->sex;
         $role = $request->role;
-        $subjects = null;// ここで検索時の科目を受け取る
+        // ここで検索時の科目を受け取る・科目名を抽出
+        $subject_id = $request->subject;
+        $subjects = DB::table('subjects')->where('id',$subject_id)->pluck('subject');
         $userFactory = new SearchResultFactories();
         $users = $userFactory->initializeUsers($keyword, $category, $updown, $gender, $role, $subjects);
         $subjects = Subjects::all();
