@@ -5,6 +5,7 @@ use App\Models\Users\User;
 
 class SelectNames implements DisplayUsers{
 
+  // 性別・権限
   public function resultUsers($keyword, $category, $updown, $gender, $role, $subjects){
     if(empty($gender)){
       $gender = ['1', '2', '3'];
@@ -16,6 +17,7 @@ class SelectNames implements DisplayUsers{
     }else{
       $role = array($role);
     }
+    // 名前であいまい検索
     $users = User::with('subjects')
     ->where(function($q) use ($keyword){
       $q->where('over_name', 'like', '%'.$keyword.'%')

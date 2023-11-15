@@ -3,9 +3,12 @@ namespace App\Searchs;
 
 use App\Models\Users\User;
 
+// SelectIdDetailsクラスで、インターフェイスDisplayUsers内で指定したresultUsersメソッドを実装
 class SelectIdDetails implements DisplayUsers{
 
   // 改修課題：選択科目の検索機能
+  // カテゴリー：社員IDで選択され、subjectsがNULLでなかったときの抽出
+
   public function resultUsers($keyword, $category, $updown, $gender, $role, $subjects){
     if(is_null($keyword)){
       $keyword = User::get('id')->toArray();
@@ -29,7 +32,7 @@ class SelectIdDetails implements DisplayUsers{
       ->whereIn('role', $role);
     })
     ->whereHas('subjects', function($q) use ($subjects){
-      $q->where('subjects.id', $subjects);
+      $q->whereIn('subjects.id', $subjects); // チェックを入れた科目で検索(ひとつでも該当すれば抽出)
     })
     ->orderBy('id', $updown)->get();
     return $users;
