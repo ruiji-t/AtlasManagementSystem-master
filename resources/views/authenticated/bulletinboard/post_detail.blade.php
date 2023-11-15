@@ -5,7 +5,7 @@
     <div class="m-3 detail_container">
       <div class="p-3">
         <div class="detail_inner_head">
-          <div>
+          <div class="">
             <!-- バリデーションメッセージ -->
             @if($errors->first('post_title'))
               <span class="error_message">{{ $errors->first('post_title') }}</span>
@@ -13,6 +13,11 @@
             @if($errors->first('post_body'))
               <span class="error_message">{{ $errors->first('post_body') }}</span>
             @endif
+            <div>
+            @foreach($post->subCategories as $subCategory)
+              <span class="category_btn">{{ $subCategory->sub_category }}</span>
+            @endforeach
+            </div>
           </div>
           <div>
             <!-- ログインユーザーの投稿のみ編集・削除ボタンの表示 -->
