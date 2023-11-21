@@ -13,6 +13,7 @@
             @if($errors->first('post_body'))
               <span class="error_message">{{ $errors->first('post_body') }}</span>
             @endif
+            <!-- サブカテゴリー名の表示 -->
             <div>
             @foreach($post->subCategories as $subCategory)
               <span class="category_btn">{{ $subCategory->sub_category }}</span>

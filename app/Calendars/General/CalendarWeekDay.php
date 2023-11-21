@@ -5,6 +5,7 @@ use App\Models\Calendars\ReserveSettings;
 use Carbon\Carbon;
 use Auth;
 
+// カレンダー日クラス：その日のカレンダーを出力
 class CalendarWeekDay{
   protected $carbon;
 
@@ -12,9 +13,10 @@ class CalendarWeekDay{
     $this->carbon = new Carbon($date);
   }
 
+  // CSS用のクラス名を出力　※format("D")：曜日（省略形）の取得
   function getClassName(){
     return "day-" . strtolower($this->carbon->format("D"));
-  }
+  } // day-mon,...,day-sun などを返す
 
   function pastClassName(){
     return;
@@ -24,9 +26,13 @@ class CalendarWeekDay{
    * @return
    */
 
+
+   // カレンダーの日の内部を出力　※format("j")：日付(ゼロなし)の取得
    function render(){
      return '<p class="day">' . $this->carbon->format("j"). '日</p>';
-   }
+   }  // <p class="day">j日</p>　のHTMLを返す
+
+
 
    function selectPart($ymd){
      $one_part_frame = ReserveSettings::with('users')->where('setting_reserve', $ymd)->where('setting_part', '1')->first();
@@ -52,21 +58,23 @@ class CalendarWeekDay{
      $html[] = '<select name="getPart[]" class="border-primary" style="width:70px; border-radius:5px;" form="reserveParts">';
      $html[] = '<option value="" selected></option>';
      if($one_part_frame == "0"){
-       $html[] = '<option value="1" disabled>リモ1部(残り0枠)</option>';
+       $html[] = '<option value="1">リモ1部(残り20枠)</option>';
      }else{
        $html[] = '<option value="1">リモ1部(残り'.$one_part_frame.'枠)</option>';
      }
      if($two_part_frame == "0"){
-       $html[] = '<option value="2" disabled>リモ2部(残り0枠)</option>';
+       $html[] = '<option value="2">リモ2部(残り20枠)</option>';
      }else{
        $html[] = '<option value="2">リモ2部(残り'.$two_part_frame.'枠)</option>';
      }
      if($three_part_frame == "0"){
-       $html[] = '<option value="3" disabled>リモ3部(残り0枠)</option>';
+       $html[] = '<option value="3">リモ3部(残り20枠)</option>';
      }else{
        $html[] = '<option value="3">リモ3部(残り'.$three_part_frame.'枠)</option>';
      }
      $html[] = '</select>';
+
+
      return implode('', $html);
    }
 
