@@ -14,5 +14,24 @@
       <input type="submit" class="btn btn-primary" value="予約する" form="reserveParts">
     </div>
   </div>
+  <!-- モーダルの中身 -->
+    <div class="modal js-modal">
+        <div class="modal__bg js-modal-close"></div>
+        <div class="modal__content">
+          <form action="" method="post">
+            <p>予約日：<input name="" class="modal_date" value="" readonly></p>
+            <br>
+            <p>時間：リモ<input name="" class="modal_part" value="" readonly>部</p>
+            <br>
+            <p>上記の予約をキャンセルしてもよろしいですか？</p>
+            <br>
+                {{ csrf_field() }}
+          </form>
+          <!-- 閉じるボタン -->
+          <button class="js-modal-close btn btn-primary" href="">閉じる</button>
+          <!-- キャンセルボタン -->
+          <button type="submit" class="btn btn-danger">キャンセル</button>
+        </div>
+    </div>
 </div>
 @endsection

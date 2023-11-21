@@ -58,7 +58,7 @@ class CalendarView{
         }
         $html[] = $day->render();
 
-        // 予約があるとき
+        // 予約が存在するとき
         if(in_array($day->everyDay(), $day->authReserveDay())){
           $reservePart = $day->authReserveDate($day->everyDay())->first()->setting_part;
           if($reservePart == 1){
@@ -73,11 +73,13 @@ class CalendarView{
             $html[] = '<p class="m-auto p-0 w-75" style="font-size:12px">'. $reservePart .'</p>';
             $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
           }else{
-            $html[] = '<button type="submit" class="btn btn-danger p-0 w-75" name="delete_date" style="font-size:12px" value="'. $day->authReserveDate($day->everyDay())->first()->setting_reserve .'">'. $reservePart .'</button>';
             $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
+            $html[] = '<button type="submit" class="btn btn-danger p-0 w-75" name="delete_date" style="font-size:12px" value="'. $day->authReserveDate($day->everyDay())->first()->setting_reserve .'">
+            <a class="js-modal-open" href="" date="'. $day->authReserveDate($day->everyDay())->first()->setting_reserve .'" part="'. $day->authReserveDate($day->everyDay())->first()->setting_part .'" >'. $reservePart .'</a>
+            </button>';
           }
           $html[] = $day->getDate();
-        }// 予約がないとき
+        }// 予約が存在しないとき
         else{
           if($startDay <= $day->everyDay() && $toDay > $day->everyDay()){
             $html[] = '<p style="font-size:12px">受付終了</p>';
