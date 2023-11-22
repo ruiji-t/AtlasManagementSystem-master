@@ -16,20 +16,23 @@ li {
   list-style: none;
 }
 
+
 a:link {
   text-decoration: none;
-  color: #FFF;
 }
 
 a:visited {
   text-decoration: none;
+}
+
+.cancel {
+  text-decoration: none;
   color: #FFF;
 }
 
-a:hover {
+.cancel:hover {
   text-decoration: none;
 }
-
 
 .alert_text {
   color: #FF0000;

@@ -5,6 +5,7 @@ namespace App\Calendars\General;
 use Carbon\Carbon;
 use Auth;
 
+
 class CalendarView{
 
   private $carbon;
@@ -74,8 +75,9 @@ class CalendarView{
             $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
           }else{
             $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
+            // 「リモ〇部」ボタン（赤）　予約した日と部をモーダルにわたす
             $html[] = '<button type="submit" class="btn btn-danger p-0 w-75" name="delete_date" style="font-size:12px" value="'. $day->authReserveDate($day->everyDay())->first()->setting_reserve .'">
-            <a class="js-modal-open" href="" date="'. $day->authReserveDate($day->everyDay())->first()->setting_reserve .'" part="'. $day->authReserveDate($day->everyDay())->first()->setting_part .'" >'. $reservePart .'</a>
+            <a class="js-modal-open cancel" href="" date="'. $day->authReserveDate($day->everyDay())->first()->setting_reserve .'" part="'. $day->authReserveDate($day->everyDay())->first()->setting_part .'" >'. $reservePart .'</a>
             </button>';
           }
           $html[] = $day->getDate();

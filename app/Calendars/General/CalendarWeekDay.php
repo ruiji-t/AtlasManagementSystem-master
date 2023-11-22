@@ -4,6 +4,7 @@ namespace App\Calendars\General;
 use App\Models\Calendars\ReserveSettings;
 use Carbon\Carbon;
 use Auth;
+use DB;
 
 // カレンダー日クラス：その日のカレンダーを出力
 class CalendarWeekDay{
@@ -90,9 +91,10 @@ class CalendarWeekDay{
      return Auth::user()->reserveSettings->pluck('setting_reserve')->toArray();
    }
 
-   // 予約日
+   //
    function authReserveDate($reserveDate){
      return Auth::user()->reserveSettings->where('setting_reserve', $reserveDate);
    }
+
 
 }

@@ -16,21 +16,21 @@
   </div>
   <!-- モーダルの中身 -->
     <div class="modal js-modal">
-        <div class="modal__bg js-modal-close"></div>
+        <div class="modal__bg"></div>
         <div class="modal__content">
-          <form action="" method="post">
-            <p>予約日：<input name="" class="modal_date" value="" readonly></p>
+          <form action="/delete/calendar" method="post">
+            <p>予約日：<input name="reserve_date" class="modal_date" value="" readonly></p>
             <br>
-            <p>時間：リモ<input name="" class="modal_part" value="" readonly>部</p>
+            <p>時間：リモ<input name="reserve_part" class="modal_part" value="" readonly>部</p>
             <br>
             <p>上記の予約をキャンセルしてもよろしいですか？</p>
             <br>
                 {{ csrf_field() }}
+            <!-- 閉じるボタン -->
+            <button class="js-modal-close btn btn-primary" href="">閉じる</button>
+            <!-- キャンセルボタン -->
+            <input type="submit" class="btn btn-danger" value="キャンセル">
           </form>
-          <!-- 閉じるボタン -->
-          <button class="js-modal-close btn btn-primary" href="">閉じる</button>
-          <!-- キャンセルボタン -->
-          <button type="submit" class="btn btn-danger">キャンセル</button>
         </div>
     </div>
 </div>
