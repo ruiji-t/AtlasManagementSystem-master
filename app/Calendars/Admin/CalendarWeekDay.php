@@ -31,24 +31,25 @@ class CalendarWeekDay{
     $three_part = ReserveSettings::with('users')->where('setting_reserve', $ymd)->where('setting_part', '3')->first();
 
     // 予約している人数を表示（スクール予約確認画面）
+    // 「〇数」にスクール予約詳細画面へのリンクを設置
     $html[] = '<div class="text-left">';
     if($one_part){
       $one_counter = DB::table('reserve_setting_users')->where('reserve_setting_id',$one_part->id)->count();
-      $html[] = '<p class="day_part m-0 pt-1">1部　　'.$one_counter.'</p>';
+      $html[] = '<p class="day_part m-0 pt-1"><a href="/calendar/'. $ymd .'/1 ">1部</a>　　'.$one_counter.'</p>';
     }else{
-      $html[] = '<p class="day_part m-0 pt-1">1部　　0</p>';
+      $html[] = '<p class="day_part m-0 pt-1"><a href="/calendar/'. $ymd .'/1">1部</a>　　0</p>';
     }
     if($two_part){
       $two_counter = DB::table('reserve_setting_users')->where('reserve_setting_id',$two_part->id)->count();
-      $html[] = '<p class="day_part m-0 pt-1">2部　　'.$two_counter.'</p>';
+      $html[] = '<p class="day_part m-0 pt-1"><a href="/calendar/'. $ymd .'/2 ">2部</a>　　'.$two_counter.'</p>';
     }else{
-      $html[] = '<p class="day_part m-0 pt-1">2部　　0</p>';
+      $html[] = '<p class="day_part m-0 pt-1"><a href="/calendar/'. $ymd .'/2 ">2部</a>　　0</p>';
     }
     if($three_part){
       $three_counter = DB::table('reserve_setting_users')->where('reserve_setting_id',$three_part->id)->count();
-      $html[] = '<p class="day_part m-0 pt-1">3部　　'.$three_counter.'</p>';
+      $html[] = '<p class="day_part m-0 pt-1"><a href="/calendar/'. $ymd .'/3 ">3部</a>　　'.$three_counter.'</p>';
     }else{
-      $html[] = '<p class="day_part m-0 pt-1">3部　　0</p>';
+      $html[] = '<p class="day_part m-0 pt-1"><a href="/calendar/'. $ymd .'/3 ">3部</a>　　0</p>';
     }
     $html[] = '</div>';
 
