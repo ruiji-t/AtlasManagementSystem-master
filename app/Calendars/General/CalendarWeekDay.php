@@ -4,7 +4,7 @@ namespace App\Calendars\General;
 use App\Models\Calendars\ReserveSettings;
 use Carbon\Carbon;
 use Auth;
-use DB;
+
 
 // カレンダー日クラス：その日のカレンダーを出力
 class CalendarWeekDay{
