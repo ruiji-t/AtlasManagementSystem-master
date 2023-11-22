@@ -3,6 +3,7 @@ namespace App\Calendars\Admin;
 
 use Carbon\Carbon;
 use App\Models\Calendars\ReserveSettings;
+use DB;
 
 class CalendarWeekDay{
   protected $carbon;
@@ -29,17 +30,28 @@ class CalendarWeekDay{
     $two_part = ReserveSettings::with('users')->where('setting_reserve', $ymd)->where('setting_part', '2')->first();
     $three_part = ReserveSettings::with('users')->where('setting_reserve', $ymd)->where('setting_part', '3')->first();
 
+    // 予約している人数を表示（スクール予約確認画面）
     $html[] = '<div class="text-left">';
     if($one_part){
-      $html[] = '<p class="day_part m-0 pt-1">1部</p>';
+      $one_counter = DB::table('reserve_setting_users')->where('reserve_setting_id',$one_part->id)->count();
+      $html[] = '<p class="day_part m-0 pt-1">1部　　'.$one_counter.'</p>';
+    }else{
+      $html[] = '<p class="day_part m-0 pt-1">1部　　0</p>';
     }
     if($two_part){
-      $html[] = '<p class="day_part m-0 pt-1">2部</p>';
+      $two_counter = DB::table('reserve_setting_users')->where('reserve_setting_id',$two_part->id)->count();
+      $html[] = '<p class="day_part m-0 pt-1">2部　　'.$two_counter.'</p>';
+    }else{
+      $html[] = '<p class="day_part m-0 pt-1">2部　　0</p>';
     }
     if($three_part){
-      $html[] = '<p class="day_part m-0 pt-1">3部</p>';
+      $three_counter = DB::table('reserve_setting_users')->where('reserve_setting_id',$three_part->id)->count();
+      $html[] = '<p class="day_part m-0 pt-1">3部　　'.$three_counter.'</p>';
+    }else{
+      $html[] = '<p class="day_part m-0 pt-1">3部　　0</p>';
     }
     $html[] = '</div>';
+
 
     return implode("", $html);
   }

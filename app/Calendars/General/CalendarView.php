@@ -52,7 +52,7 @@ class CalendarView{
 
         if($startDay <= $day->everyDay() && $toDay > $day->everyDay()){
 
-          $html[] = '<td class="calendar-td" style="background-color:#f6f6f6" >';
+          $html[] = '<td class="calendar-td past-day" >';
 
         }else{
           $html[] = '<td class="calendar-td '.$day->getClassName().'">';
