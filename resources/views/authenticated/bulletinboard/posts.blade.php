@@ -16,17 +16,26 @@
         </div>
         <div class="d-flex post_status">
           <div class="mr-5">
-            <i class="fa fa-comment"></i><span class="">{{ $post->postComments()->count() }}</span>
+            <!-- コメントアイコン -->
+            <i class="fa fa-comment"></i>
+            <!-- コメント数 -->
+            <span class="">{{ $post->postComments()->count() }}</span>
           </div>
           <div>
+            <!-- 「いいね」しているとき -->
             @if(Auth::user()->is_Like($post->id))
             <p class="m-0">
+              <!-- 赤塗りつぶしハート -->
               <i class="fas fa-heart un_like_btn" post_id="{{ $post->id }}"></i>
+              <!-- いいね数 -->
               <span class="like_counts{{ $post->id }}">{{ $post->likes()->count() }}</span>
             </p>
+            <!-- 「いいね」していないとき -->
             @else
             <p class="m-0">
+              <!-- 白抜きハート -->
               <i class="far fa-heart like_btn" post_id="{{ $post->id }}"></i>
+              <!-- いいね数 -->
               <span class="like_counts{{ $post->id }}">{{ $post->likes()->count() }}</span>
             </p>
             @endif

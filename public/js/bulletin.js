@@ -13,11 +13,13 @@ $(function () {
   });
 
 
-  // 黒ハート（「いいね」ボタン）をクリック
+  // 白ハート（「いいね」ボタン）をクリック　白抜き(far)→赤塗りつぶし(fas)
   $(document).on('click', '.like_btn', function (e) {
     e.preventDefault();
     $(this).addClass('un_like_btn');
+    $(this).addClass('fas');
     $(this).removeClass('like_btn');
+    $(this).removeClass('far');
     var post_id = $(this).attr('post_id');
     var count = $('.like_counts' + post_id).text();
     var countInt = Number(count);
@@ -36,10 +38,13 @@ $(function () {
     });
   });
 
+  // 赤ハート（「いいね」取り消しボタン）をクリック　赤塗りつぶし→白抜き
   $(document).on('click', '.un_like_btn', function (e) {
     e.preventDefault();
     $(this).removeClass('un_like_btn');
+    $(this).removeClass('fas');
     $(this).addClass('like_btn');
+    $(this).addClass('far');
     var post_id = $(this).attr('post_id');
     var count = $('.like_counts' + post_id).text();
     var countInt = Number(count);
