@@ -40,26 +40,114 @@ a:visited {
 }
 
 
+
+/* ログイン */
+.atlas_icon {
+  display: flex;
+  justify-content: center;
+}
+
+.atlas_icon img {
+  width: 170px;
+  height: 60px;
+  position: absolute;
+  top: 140px;
+}
+
+.login_box {
+  width: 28%;
+  background: #FFF;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #999;
+}
+
+.login_box label {
+  font-weight: bold;
+}
+
+.text-center {
+  margin-bottom: 3%;
+}
+
+/* 新規登録 */
+.register_box {
+  width: 28%;
+  background: #FFF;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #999;
+}
+
+.register_frame {
+  padding: 2px 17px 2px 17px;
+}
+
+.register_frame label {
+  font-weight: bold;
+}
+
+.sex {
+  margin-left: 8px;
+  margin-right: 2px;
+}
+
+.sex_box {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.sex_box label {
+  padding-top: 7px;
+}
+
+.old {
+  border: none;
+  border-bottom: 1px solid #3366FF;
+  width: 25%;
+}
+
+
 /* サイドバー */
 .sidebar {
-  width: 150px;
+  width: 170px;
   height: 100vh;
   background-color: #03AAD2;
   font-weight: bold;
+  font-size: smaller;
 }
 
 .main-container {
   width: 100%;
 }
 
+.sidebar p:nth-child(1) {
+  margin-top: 20px;
+}
+
+.sidebar p {
+  margin-left: 4px;
+}
+
 .sidebar p a {
   color: #FFF;
 }
 
+.sidebar_icon {
+  width: 28px;
+  height: 28px;
+  filter: invert(100%);
+}
+
 /* トップページ */
+.top_title {
+  margin: 20px 0px 40px 20px;
+}
+
 .user_status {
   border-radius: 10px;
   background: #FFF;
+  box-shadow: 0 0 5px #999;
 }
 
 /* スクール予約関連 */
@@ -88,8 +176,20 @@ a:visited {
   font-size: 12px;
 }
 
+.reserve_part {
+  color: #03AAD2;
+}
+
+.table th {
+  border: 1px solid #dcdcdc;
+}
+
+.table td {
+  border: 1px solid #dcdcdc;
+}
+
 .adjust-table {
-  width: 70% !important;
+  width: 80% !important;
 }
 
 .adjust-table td {
@@ -140,19 +240,117 @@ a:visited {
 }
 
 
-.modal__content {
-  padding-left: 15%;
-}
 
 .js-modal-close {
   margin-right: 45%;
 }
 
+/* スクール枠登録 */
+
+.setting_calender {
+  background: #FFF;
+  width: 85%;
+  height: 95%;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #999;
+}
+
+.setting_title {
+  margin-top: 30px;
+  text-align: center;
+  font-size: larger;
+}
+
+.setting_area p {
+  margin-bottom: 0rem;
+}
+
+
+/* スクール予約 */
+.reserve_calender {
+  width: 85%;
+  height: 95%;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #999;
+
+}
+
+.reserve_month {
+  margin: auto;
+}
+
+.reserve_area p {
+  margin-bottom: 2px;
+}
+
+/* スクール予約確認画面 */
+.confirm_calender {
+  margin: auto;
+  margin-top: 3%;
+  background: #FFF;
+  width: 85%;
+  height: 85%;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #999;
+  padding: 6px 3px;
+}
+
+.confirm_calender table td {
+  padding: 1px 10px;
+}
+
+
+.confirm_area {
+  margin: auto;
+  width: 80%;
+  height: 60%;
+}
+
+.confirm_title {
+  margin-top: 30px;
+  text-align: center;
+  font-size: larger;
+}
+
+.confirm_area p {
+  margin-bottom: 0px;
+}
+
+/* スクール予約詳細画面 */
+.detail_day {
+  margin-top: 15%;
+  width: 70%;
+}
+
+.detail_area {
+  background: #FFF;
+  width: 100%;
+  display: block;
+  padding: 1%;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #999;
+}
+
+
+.detail_table {
+  width: 100%;
+}
+
+.detail_head {
+  background: #03AAD2;
+  color: #FFF;
+}
+
+.detail_body {
+  background: #FFF;
+}
+
+.detail_body:nth-child(odd) {
+  background: #D7EEFF;
+}
 
 /* 掲示板 */
-.sub_categories {
-  display: none;
-}
+
 
 .post_create_area {
   background: #FFF;
@@ -172,25 +370,50 @@ a:visited {
 .post_area {
   background: #FFF;
   border-radius: 10px;
+  box-shadow: 0 0 5px #999;
+  margin-left: 15%;
+  margin-bottom: 2px;
 }
 
 .post_bottom_area {
   justify-content: space-between;
 }
 
-.like_btn,
-.un_like_btn {
+.fa-comment {
+  color: #999;
+}
+
+.like_btn {
+  color: #999;
   cursor: pointer;
 }
 
-.un_like,
 .un_like_btn {
   color: #E2254D;
+  cursor: pointer;
 }
 
 .error_message {
   font-size: 12px;
   color: red;
+}
+
+.post_name {
+  color: #999;
+  font-weight: bold;
+  font-size: smaller;
+}
+
+.post_title a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.post_title:visited a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
 }
 
 /* 掲示板 詳細画面 */
@@ -227,6 +450,8 @@ a:visited {
   justify-content: space-between;
 }
 
+
+
 /* 掲示板 コメント */
 .comment_container {
   background: #FFF;
@@ -251,10 +476,144 @@ a:visited {
   font-size: 12px;
 }
 
-/* 掲示板　カテゴリー */
+/* 掲示板 */
+.post_page_link {
+  margin-top: 16%;
+  margin-bottom: 10%;
+  font-size: 12px;
+  border-radius: 7px;
+  width: 250px;
+  height: 28px;
+  border: none;
+  background: #03AAD2;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.post_page_link a {
+  display: block;
+  text-decoration: none;
+  color: #FFF;
+  width: 100%;
+}
+
+.post_page_link a:hover {
+  text-decoration: none;
+}
+
+.search_bar {
+  display: flex;
+  width: 250px;
+  margin-bottom: 10%;
+}
+
+.search_bar_input {
+  width: 70%;
+  border-radius: 7px 0px 0px 7px;
+  border: 1px solid #999;
+  font-size: smaller;
+  background: #ECF1F6;
+}
+
+.search_bar_button {
+  height: 28px;
+  width: 30%;
+  border-radius: 0px 7px 7px 0px;
+  border: none;
+  background: #03AAD2;
+  color: #FFF;
+  font-size: small;
+}
+
+.pickup_btn {
+  display: flex;
+  width: 250px;
+  margin-bottom: 10%;
+}
+
+.pickup_good {
+  height: 28px;
+  width: 49%;
+  margin-right: 1%;
+  font-size: 12px;
+  border-radius: 7px;
+  border: none;
+  background: #FF99CC;
+  color: #FFF;
+  cursor: pointer;
+}
+
+.pickup_mine {
+  height: 28px;
+  width: 50%;
+  font-size: 12px;
+  border-radius: 7px;
+  border: none;
+  background: #FFA500;
+  color: #FFF;
+  cursor: pointer;
+}
+
+.categories_search {
+  margin-bottom: 5%;
+}
+
+.main_categories {
+  width: 250px;
+  border-bottom: 1px solid;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+
+.category_arrow {
+  width: 20px;
+  height: 20px;
+  transform: rotate(180deg);
+}
+
+.no_category_arrow {
+  width: 20px;
+  height: 20px;
+  display: none;
+}
+
+.category_num {
+  display: none;
+}
+
+.sub_categories {
+  text-align: left;
+  cursor: pointer;
+  color: black;
+  width: 200px;
+  border: none;
+  border-bottom: 1px solid;
+  margin-top: 3%;
+  margin-left: 25px;
+  background: #ECF1F6;
+}
+
+
+
+/* 投稿画面 */
 .category_area {
   background: #FFF;
   border-radius: 10px;
+}
+
+.sub_create {
+  margin-top: 5%;
+}
+
+.category_area input {
+  margin-bottom: 3%;
+}
+
+.category_area select {
+  margin-bottom: 3%;
 }
 
 .category_box {
@@ -262,34 +621,60 @@ a:visited {
   padding: 3px;
   background: #999;
   font-size: 10px;
-  color: #FFF;
 }
 
 .category_btn {
   font-size: 12px;
-  border-radius: 5px;
-  padding: 0 5px;
+  border-radius: 7px;
+  padding: 3px 8px 4px 8px;
   border: none;
-  background: #999;
+  background: #03AAD2;
   color: #FFF;
 }
 
-.main_categories span,
-.sub_categories li input {
-  list-style: none;
-  cursor: pointer;
+
+
+
+/* 投稿詳細画面 */
+.detail_inner_head .category_btn {
+  font-size: 12px;
+  border-radius: 7px;
+  padding: 7px 10px 7px 10px;
+  border: none;
+  background: #03AAD2;
+  color: #FFF;
+}
+
+.post_user {
+  margin-top: 3%;
+}
+
+.detail_post {
+  color: #999;
+}
+
+.comment_area {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.comment_area .btn-primary {
+  margin-top: 2%;
+  margin-left: 89%;
 }
 
 /* ユーザー検索 */
+
+
 .reserve_users_area {
   display: flex;
   flex-wrap: wrap;
-  width: 800px;
+  width: 830px;
   margin: 10px auto;
   height: 80vh;
-  overflow: scroll;
+  overflow-y: scroll;
   padding: 10px;
-  background: #FFF;
+  background: #ECF1F6;
   border-radius: 5px;
 }
 
@@ -298,25 +683,186 @@ a:visited {
 }
 
 .one_person {
-  width: 250px;
-  height: 250px;
+  width: 185px;
+  height: 185px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 3px 15px;
+  border-radius: 6px;
+  box-shadow: 0 0 5px #999;
+  background: #FFF;
+}
+
+.one_person a span {
+  color: #03AAD2;
+  font-weight: bold;
+}
+
+.grey_item {
+  color: #999;
+  font-weight: bold;
+}
+
+.black_item {
+  color: #000;
+  font-weight: bold;
+}
+
+
+/* ユーザー検索項目（右） */
+.search_box {
+  margin: 50px 5px;
+}
+
+.search_title {
+  font-size: larger;
+  color: #003366;
+}
+
+.search_box p {
+  color: #003366;
+  margin-top: 15px;
+  margin-bottom: 3px;
+}
+
+.search_box .free_word {
+  width: 220px;
+  height: 40px;
+  background: rgba(200, 200, 200, 0.4);
+  border-radius: 6px;
+  border: none;
+  padding: 3px 10px;
+}
+
+.search_box select {
+  width: 90px;
+  height: 30px;
+  background: rgba(200, 200, 200, 0.4);
+  border-radius: 6px;
+  border: none;
+  padding: 3px 10px;
+}
+
+.search_add {
+  margin: 15px 20px;
+}
+
+
+
+.search_conditions {
+  width: 220px;
+  border-bottom: 2px solid #D3D3D3;
+  cursor: pointer;
 }
 
 .search_conditions span {
-  cursor: pointer;
+  margin-top: 15px;
+  margin-right: 70px;
+}
+
+/* 検索条件の追加　矢印 */
+.add_arrow {
+  width: 20px;
+  height: 20px;
+  color: #03AAD2;
+  transform: rotate(180deg);
+
+}
+
+.no_add_arrow {
+  width: 20px;
+  height: 20px;
+  display: none;
+
+}
+
+.search_add select {
+  width: 120px;
+  height: 30px;
+  background: rgba(200, 200, 200, 0.4);
+  border-radius: 6px;
+  border: none;
+  padding: 3px 10px;
+}
+
+.search_add select option {
+  margin-right: 10px;
 }
 
 .search_conditions_inner {
   display: none;
-  background: #FFF;
+  background: #ECF1F6;
+}
+
+.selected_subject {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.selected_subject input {
+  margin-right: 10px;
+}
+
+.search_submit {
+  width: 220px;
+  height: 40px;
+  background: #03AAD2;
+  border-radius: 6px;
+  border: none;
+  color: #FFF;
+  font-size: small;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.search_reset {
+  width: 220px;
+  height: 40px;
+  background: #ECF1F6;
+  border: none;
+  color: #03AAD2;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+
+/* プロフィール詳細画面 */
+.profile_title {
+  margin: 10px;
+}
+
+.subject_edit_area {
+  margin-top: 20px;
 }
 
 .subject_edit_btn {
-  font-size: 12px;
-  color: #0000FF;
+  font-size: 14px;
   cursor: pointer;
+  color: #03AAD2;
+  font-weight: bold;
 }
 
 .subject_inner {
   display: none;
+}
+
+.subject_check_area {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+/* プロフィール詳細画面 選択科目編集の矢印 */
+.edit_arrow {
+  width: 20px;
+  height: 20px;
+  color: #03AAD2;
+  transform: rotate(180deg);
+  filter: invert(80%) sepia(100%) saturate(3500%) hue-rotate(155deg) brightness(70%) contrast(90%);
+}
+
+.no_edit_arrow {
+  width: 20px;
+  height: 20px;
+  display: none;
+  filter: invert(80%) sepia(100%) saturate(3500%) hue-rotate(155deg) brightness(70%) contrast(90%);
 }

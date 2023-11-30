@@ -1,12 +1,12 @@
 @extends('layouts.sidebar')
 
 @section('content')
+<!-- スクール予約画面 -->
 <div class="vh-100 pt-5" style="background:#ECF1F6;">
-  <div class="border w-75 m-auto pt-5 pb-5" style="border-radius:5px; background:#FFF;">
-    <div class="w-75 m-auto border" style="border-radius:5px;">
-
+  <div class="reserve_calender border m-auto pt-5 pb-5" style="border-radius:5px; background:#FFF;">
+    <div class="w-75 reserve_month">
       <p class="text-center">{{ $calendar->getTitle() }}</p>
-      <div class="">
+      <div class="reserve_area">
         {!! $calendar->render() !!}
       </div>
     </div>

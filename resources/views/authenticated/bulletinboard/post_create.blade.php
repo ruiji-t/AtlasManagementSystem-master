@@ -44,7 +44,7 @@
   @can('admin')
   <div class="w-25 ml-auto mr-auto">
     <div class="category_area mt-5 p-5">
-      <div class="">
+      <div class="main_create">
         @error('main_category_name')
             <span class="alert_text">
                  <strong>{{ $message }}</strong>
@@ -56,7 +56,7 @@
       </div>
       <form action="{{ route('main.category.create') }}" method="post" id="mainCategoryRequest">{{ csrf_field() }}</form>
       <!-- サブカテゴリー追加 -->
-      <div class="">
+      <div class="sub_create">
 
         @error('main_category_id')
             <div class="alert_text">

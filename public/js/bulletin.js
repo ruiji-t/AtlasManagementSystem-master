@@ -1,8 +1,17 @@
 $(function () {
+  // 掲示板　カテゴリー検索のメニュー
   $('.main_categories').click(function () {
+    //  クリックしたcategory_idをもつメインカテゴリーのサブカテゴリーを表示
     var category_id = $(this).attr('category_id');
-    $('.category_num' + category_id).slideToggle();
+
+    // $('.category_num' + category_id).slideToggle();
+    $('.category_num[category_id="' + category_id + '"]').slideToggle();
+
+    // 矢印
+    $('.category_arrow[category_id="' + category_id + '"]').toggle();
+    $('.no_category_arrow[category_id="' + category_id + '"]').toggle();
   });
+
 
   // 黒ハート（「いいね」ボタン）をクリック
   $(document).on('click', '.like_btn', function (e) {

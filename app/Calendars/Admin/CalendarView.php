@@ -3,6 +3,7 @@ namespace App\Calendars\Admin;
 use Carbon\Carbon;
 use App\Models\Users\User;
 
+// スクール予約確認画面
 class CalendarView{
   private $carbon;
 
@@ -13,6 +14,7 @@ class CalendarView{
   public function getTitle(){
     return $this->carbon->format('Y年n月');
   }
+
 
   public function render(){
     $html = [];
@@ -25,8 +27,8 @@ class CalendarView{
     $html[] = '<th class="border">水</th>';
     $html[] = '<th class="border">木</th>';
     $html[] = '<th class="border">金</th>';
-    $html[] = '<th class="border">土</th>';
-    $html[] = '<th class="border">日</th>';
+    $html[] = '<th class="border" style="color:blue">土</th>';
+    $html[] = '<th class="border" style="color:red">日</th>';
     $html[] = '</tr>';
     $html[] = '</thead>';
     $html[] = '<tbody>';
@@ -41,6 +43,7 @@ class CalendarView{
         $toDay = $this->carbon->format("Y-m-d");
         if($startDay <= $day->everyDay() && $toDay > $day->everyDay()){
           $html[] = '<td class="past-day border">';
+          $html[] ='<p class=" '.$day->getClassName().'"';
         }else{
           $html[] = '<td class="border '.$day->getClassName().'">';
         }

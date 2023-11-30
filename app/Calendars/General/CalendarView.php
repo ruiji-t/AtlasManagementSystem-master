@@ -5,7 +5,7 @@ namespace App\Calendars\General;
 use Carbon\Carbon;
 use Auth;
 
-
+// スクール予約画面
 class CalendarView{
 
   private $carbon;
@@ -30,8 +30,8 @@ class CalendarView{
     $html[] = '<th>水</th>';
     $html[] = '<th>木</th>';
     $html[] = '<th>金</th>';
-    $html[] = '<th>土</th>';
-    $html[] = '<th>日</th>';
+    $html[] = '<th style="color:blue">土</th>';
+    $html[] = '<th style="color:red">日</th>';
     $html[] = '</tr>';
     $html[] = '</thead>';
 
@@ -53,9 +53,11 @@ class CalendarView{
         if($startDay <= $day->everyDay() && $toDay > $day->everyDay()){
 
           $html[] = '<td class="calendar-td past-day" >';
+          $html[] ='<p class=" '.$day->getClassName().'"';
 
         }else{
           $html[] = '<td class="calendar-td '.$day->getClassName().'">';
+          $html[] ='<p class=" '.$day->getClassName().'"';
         }
         $html[] = $day->render();
 
