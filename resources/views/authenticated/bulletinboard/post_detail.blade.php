@@ -1,6 +1,6 @@
 @extends('layouts.sidebar')
 @section('content')
-<div class="vh-100 d-flex">
+<div class="d-flex">
   <div class="w-50 mt-5">
     <div class="m-3 detail_container">
       <div class="p-3">

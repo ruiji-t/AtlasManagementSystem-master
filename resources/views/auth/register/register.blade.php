@@ -14,55 +14,59 @@
 </head>
 <body class="all_content">
   <form action="{{ route('registerPost') }}" method="POST">
-    <div class="w-100 vh-100 d-flex" style="align-items:center; justify-content:center;">
-      <div class="vh-75 border p-3 register_box">
+    <div class="register_area" style="align-items:center; justify-content:center;">
+      <div class="border p-2 register_box">
        <div class="register_frame">
         <div class="register_form">
-          <div class="d-flex mt-3" style="justify-content:space-between">
-            <div class="" style="width:140px">
+          <div class="validation_name mt-2">
               @error('over_name')
                 <span class="alert_text">
                      <strong>{{ $message }}</strong>
                 </span>
               @enderror
-              <label class="d-block m-0" style="font-size:13px">姓</label>
-              <div class="border-bottom border-primary" style="width:140px;">
-                <input type="text" style="width:140px;" class="border-0 over_name" name="over_name">
-              </div>
-            </div>
-            <div class="" style="width:140px">
               @error('under_name')
                 <span class="alert_text">
                      <strong>{{ $message }}</strong>
                 </span>
               @enderror
+            </div>
+          <div class="d-flex mt-3" style="justify-content:space-between">
+            <div class="" style="width:45%">
+              <label class="d-block m-0" style="font-size:13px">姓</label>
+              <div class="border-bottom border-primary" style="width:100%">
+                <input type="text" style="width:40%" class="border-0 over_name w-100" name="over_name">
+              </div>
+            </div>
+            <div class="" style="width:45%">
               <label class=" d-block m-0" style="font-size:13px">名</label>
-              <div class="border-bottom border-primary" style="width:140px;">
-                <input type="text" style="width:140px;" class="border-0 under_name" name="under_name">
+              <div class="border-bottom border-primary" style="width:100%">
+                <input type="text" style="width:40%" class="border-0 under_name w-100" name="under_name">
               </div>
             </div>
           </div>
-          <div class="d-flex mt-3" style="justify-content:space-between">
-            <div class="" style="width:140px">
+          <div class="validation_name  mt-2">
               @error('over_name_kana')
                 <span class="alert_text">
                      <strong>{{ $message }}</strong>
                 </span>
               @enderror
-              <label class="d-block m-0" style="font-size:13px">セイ</label>
-              <div class="border-bottom border-primary" style="width:140px;">
-                <input type="text" style="width:140px;" class="border-0 over_name_kana" name="over_name_kana">
-              </div>
-            </div>
-            <div class="" style="width:140px">
               @error('under_name_kana')
                 <span class="alert_text">
                      <strong>{{ $message }}</strong>
                 </span>
               @enderror
+            </div>
+          <div class="d-flex mt-3" style="justify-content:space-between">
+            <div class="" style="width:45%">
+              <label class="d-block m-0" style="font-size:13px">セイ</label>
+              <div class="border-bottom border-primary" style="width:100%">
+                <input type="text" style="width:100%" class="border-0 over_name_kana w-100" name="over_name_kana">
+              </div>
+            </div>
+            <div class="" style="width:45%">
               <label class="d-block m-0" style="font-size:13px">メイ</label>
-              <div class="border-bottom border-primary" style="width:140px;">
-                <input type="text" style="width:140px;" class="border-0 under_name_kana" name="under_name_kana">
+              <div class="border-bottom border-primary" style="width:100%">
+                <input type="text" class="border-0 under_name_kana w-100" name="under_name_kana">
               </div>
             </div>
           </div>
@@ -230,7 +234,7 @@
         <div class="mt-3 text-right">
           <input type="submit" class="btn btn-primary register_btn" disabled value="新規登録" onclick="return confirm('登録してよろしいですか？')">
         </div>
-        <div class="text-center">
+        <div class="text-center  mb-3">
           <a href="{{ route('loginView') }}">ログインはこちら</a>
         </div>
        </div>

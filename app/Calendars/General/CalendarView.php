@@ -36,7 +36,7 @@ class CalendarView{
     $html[] = '</thead>';
 
     // 3行目（曜日の下行）からの出力
-    $html[] = '<tbody>';
+    $html[] = '<tbody class="table_body">';
     $weeks = $this->getWeeks(); // 週カレンダーオブジェクト内の$weekを取得
 
     foreach($weeks as $week){

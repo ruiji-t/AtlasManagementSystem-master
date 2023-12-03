@@ -2,8 +2,8 @@
 
 @section('content')
 <!-- <p>ユーザー検索</p> -->
-<div class="search_content w-100 d-flex">
-  <div class="reserve_users_area">
+<div class="search_content w-100 m-auto d-flex">
+  <div class="reserve_users_area w-75 m-3">
     @foreach($users as $user)
     <div class="border one_person">
       <div>

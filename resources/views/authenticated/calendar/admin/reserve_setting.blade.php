@@ -1,7 +1,7 @@
 @extends('layouts.sidebar')
 @section('content')
 <!-- スクール予約枠登録画面 -->
-<div class="w-100 vh-100 d-flex" style="align-items:center; justify-content:center;">
+<div class="w-100 d-flex" style="align-items:center; justify-content:center;">
   <div class="border setting_calender">
     <p class="setting_title">{{ $calendar->getTitle() }}</p>
     <div class="setting_area">

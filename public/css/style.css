@@ -42,16 +42,24 @@ a:visited {
 
 
 /* ログイン */
+.login_area {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  margin-top: 12%;
+  margin-bottom: 12%;
+}
+
 .atlas_icon {
   display: flex;
   justify-content: center;
+  margin-bottom: 2%;
 }
 
 .atlas_icon img {
   width: 170px;
   height: 60px;
-  position: absolute;
-  top: 140px;
 }
 
 .login_box {
@@ -65,24 +73,39 @@ a:visited {
   font-weight: bold;
 }
 
-.text-center {
-  margin-bottom: 3%;
+.login_area .btn-primary {
+  margin: 2% 0 0 auto;
 }
 
+
 /* 新規登録 */
+.register_area {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
 .register_box {
-  width: 28%;
+  min-width: 28%;
   background: #FFF;
   border-radius: 10px;
   box-shadow: 0 0 5px #999;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .register_frame {
-  padding: 2px 17px 2px 17px;
+  padding: 3% 10% 3% 10%
 }
 
 .register_frame label {
   font-weight: bold;
+}
+
+.validation_name {
+  display: flex;
+  justify-content: space-between;
+  margin: 1%;
 }
 
 .sex {
@@ -111,7 +134,8 @@ a:visited {
 /* サイドバー */
 .sidebar {
   width: 170px;
-  height: 100vh;
+  /* height: 100vh; */
+  min-height: 100vh;
   background-color: #03AAD2;
   font-weight: bold;
   font-size: smaller;
@@ -150,7 +174,7 @@ a:visited {
   box-shadow: 0 0 5px #999;
 }
 
-/* スクール予約関連 */
+/* カレンダー共通 */
 .day-blank {
   background: #D3D3D3;
 }
@@ -167,17 +191,14 @@ a:visited {
   background: #EEE;
 }
 
-.calendar-td {
-  min-width: 100px;
-}
-
 .day_part {
   color: #494949;
   font-size: 12px;
 }
 
-.reserve_part {
-  color: #03AAD2;
+.table {
+  table-layout: fixed;
+  width: 100%;
 }
 
 .table th {
@@ -188,111 +209,44 @@ a:visited {
   border: 1px solid #dcdcdc;
 }
 
-.adjust-table {
-  width: 80% !important;
-}
-
-.adjust-table td {
-  padding: 0 !important;
-}
-
-.adjust-area p {
-  justify-content: space-around;
-}
-
-.adjust-table-btn {
-  width: 70%;
-}
-
-/* モーダル */
-.modal {
-  display: none;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-.modal__bg {
-  background: rgba(0, 0, 0, 0.8);
-  height: 100vh;
-  position: absolute;
-  width: 100%;
-}
-
-.modal__content {
-  background: #fff;
-  left: 50%;
-  padding: 40px;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 60%;
-}
-
-.modal_date {
-  border: 0;
-}
-
-.modal_part {
-  border: 0;
-  width: 2%;
-}
-
-
-
-.js-modal-close {
-  margin-right: 45%;
-}
-
-/* スクール枠登録 */
-
-.setting_calender {
-  background: #FFF;
-  width: 85%;
-  height: 95%;
-  border-radius: 10px;
-  box-shadow: 0 0 5px #999;
-}
-
-.setting_title {
-  margin-top: 30px;
-  text-align: center;
-  font-size: larger;
-}
-
-.setting_area p {
-  margin-bottom: 0rem;
-}
-
 
 /* スクール予約 */
 .reserve_calender {
   width: 85%;
-  height: 95%;
   border-radius: 10px;
   box-shadow: 0 0 5px #999;
-
 }
 
 .reserve_month {
   margin: auto;
+  max-width: 100%;
 }
 
 .reserve_area p {
   margin-bottom: 2px;
 }
 
+.reserve_part {
+  color: #03AAD2;
+}
+
+select.border-primary {
+  /* 予約部門選択 */
+  max-width: 100%;
+}
+
+
 /* スクール予約確認画面 */
 .confirm_calender {
   margin: auto;
   margin-top: 3%;
+  margin-bottom: 3%;
   background: #FFF;
   width: 85%;
-  height: 85%;
+  min-height: 90%;
   border-radius: 10px;
   box-shadow: 0 0 5px #999;
-  padding: 6px 3px;
+  padding: 3%;
 }
 
 .confirm_calender table td {
@@ -348,6 +302,89 @@ a:visited {
 .detail_body:nth-child(odd) {
   background: #D7EEFF;
 }
+
+
+
+
+/* スクール枠登録画面 */
+.adjust-table {
+  width: 80% !important;
+}
+
+.adjust-table td {
+  padding: 0 !important;
+}
+
+.adjust-area p {
+  justify-content: space-around;
+}
+
+.adjust-table-btn {
+  width: 70%;
+}
+
+.setting_calender {
+  background: #FFF;
+  width: 85%;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #999;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  padding-bottom: 3%;
+}
+
+.setting_title {
+  margin-top: 30px;
+  text-align: center;
+  font-size: larger;
+}
+
+.setting_area p {
+  margin-bottom: 0rem;
+}
+
+
+
+/* モーダル */
+.modal {
+  display: none;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.modal__bg {
+  background: rgba(0, 0, 0, 0.8);
+  height: 100vh;
+  position: absolute;
+  width: 100%;
+}
+
+.modal__content {
+  background: #fff;
+  left: 50%;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+}
+
+.modal_date {
+  border: 0;
+}
+
+.modal_part {
+  border: 0;
+  width: 2%;
+}
+
+.js-modal-close {
+  margin-right: 45%;
+}
+
+
 
 /* 掲示板 */
 
@@ -656,24 +693,21 @@ a:visited {
 .comment_area {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
 }
 
 .comment_area .btn-primary {
-  margin-top: 2%;
-  margin-left: 89%;
+  margin: 2% 0 0 auto;
 }
 
 /* ユーザー検索 */
-
-
 .reserve_users_area {
   display: flex;
   flex-wrap: wrap;
-  width: 830px;
-  margin: 10px auto;
   height: 80vh;
   overflow-y: scroll;
-  padding: 10px;
+  padding: 3% 0 0 3%;
   background: #ECF1F6;
   border-radius: 5px;
 }
